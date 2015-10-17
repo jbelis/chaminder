@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    var app = angular.module('chaminder', ['ionic']);
+    var app = angular.module('chaminder', ['ionic', 'ionic.contrib.ui.cards']);
 
     app.run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {

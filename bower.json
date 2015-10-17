@@ -1,6 +1,5 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
+  "name": "Chaminder",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0"
   }

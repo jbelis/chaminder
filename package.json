@@ -1,7 +1,7 @@
 {
   "name": "chaminder",
   "version": "1.0.0",
-  "description": "chaminder: An Ionic project",
+  "description": "chaminder",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -23,6 +23,10 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    {
+      "platform": "android",
+      "locator": "browser"
+    }
   ]
 }

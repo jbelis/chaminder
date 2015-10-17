@@ -3,15 +3,13 @@
 
 	var app = angular.module('chaminder');
 
-	app.controller('HomeController', function ($scope, Data) {
+	app.controller('HomeController', function ($scope, $state, Data) {
 
-		Data.start();
-		$scope.startDrink = function() {
-			console.log("start beer");
-		};
-
-		$scope.startFood = function() {
-			console.log("start food");
+		$scope.start = function(type) {
+			Data.start(type).then(function(session) {
+				console.log(session);
+				$state.go('choose');
+			})
 		};
 
 	});

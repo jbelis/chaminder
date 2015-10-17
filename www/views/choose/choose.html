@@ -1,0 +1,44 @@
+<ion-view title="Home">
+	<ion-content scroll="false"
+				 class="content-chaminder content-choose">
+
+		<div class="cards">
+			<swipe-cards>
+				<swipe-card ng-repeat="card in cards"
+							on-destroy="cardDestroyed($index)"
+							on-card-swipe="cardSwiped($index)">
+
+					<div class="title">
+						{{card.name}}
+					</div>
+					<div class="offer">
+						{{card.offer && card.offer.type}}
+					</div>
+					<div class="image-container" ng-style="{'background-image':'url('+card.image_url+')'}">
+					</div>
+
+
+				</swipe-card>
+			</swipe-cards>
+		</div>
+		<div class="buttons">
+			<div class="button-container">
+
+			<button ng-click="like()">
+				<i class="icon ion-thumbsdown"></i>
+			</button>
+
+			<button ng-click="pick()">
+				<i class="icon ion-heart"></i>
+			</button>
+
+			<button ng-click="junk()">
+				<i class="icon ion-thumbsup"></i>
+			</button>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>
+
+

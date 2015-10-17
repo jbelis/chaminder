@@ -1,0 +1,18 @@
+.content-home {
+  width:100%;
+  height:100%;
+
+  .button-container {
+    margin-top: auto;
+    margin-bottom: auto;
+    button {
+      margin: 2em;
+      font-size: 2em;
+      height: 2em;
+      width: 2em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

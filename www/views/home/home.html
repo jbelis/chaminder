@@ -1,14 +1,20 @@
 <ion-view title="Home">
 	<ion-content scroll="false"
-				 class="chaminder-content intro">
+				 class="content-chaminder content-home">
 
-		<button ng-click="startDrink()">
-			<i class="icon ion-beer"></i>
-		</button>
+		<div class="button-container">
+			<button ng-click="start('drink')">
+				<i class="icon ion-beer"></i>
+			</button>
 
-		<button ng-click="startFood()">
-			<i class="icon ion-fork"></i>
-		</button>
+			<button ng-click="start('food')">
+				<i class="icon ion-fork"></i>
+			</button>
+
+			<button ng-click="start('coffee')">
+				<i class="icon ion-coffee"></i>
+			</button>
+		</div>
 	</ion-content>
 </ion-view>
 
