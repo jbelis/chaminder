@@ -7,14 +7,24 @@
 	app.service("Data", function ($http, $q) {
 
 		var baseUrl = "https://chamonix-hackathon-2015.herokuapp.com";
+		
+	
 		function Session() {
 			var _places = [];
+		var _tags = {
+			food:   ["pizza", "burger", "fries", "bird", "wings"],
+			drink:  ["drink", "cocktails", "beer", "shots", "tequila", "genepi"],
+			coffee: ["coffee", "cafe"]
+		};
+		
 
 			function getOffer(place) {
 				if (typeof place.offer === 'undefined') {
 					return $http.get(baseUrl + "/bars/" + place.id).then(function (response) {
 						var offers = response.data.length && response.data[0].offers;
-						place.offer = (offers.length && offers[0].type) || null;
+						if (offers) {
+							place.offer = (offers.length && offers[0].type) || null;
+						}
 						return true;
 					});
 				} else {
@@ -26,8 +36,23 @@
 
 			this.start = function(type) {
 				return $http.get(baseUrl + "/bars").then(function(response) {
-					_places = response.data;
+					var _possibleTags = _tags[type];
+					_places = response.data.reduce(function(arr, pl) {
+					    var found = false;
+						pl.tagged.forEach(function(tag) {
+							if (_possibleTags.indexOf(tag) >= 0) {
+								found = true;
+							}
+						});
+						if (found) {
+							arr.push(pl);
+						}
+						return arr;
+					}, []);
 
+					// food, drink, coffee
+					
+					
 					// get offer data for the first one
 					return getOffer(_places[0]).then(function() {
 						return _places;
@@ -64,8 +89,8 @@
 
 		return {
 			start: function (type) {
-				_session = new Session(type);
-				return _session.start();
+				_session = new Session();
+				return _session.start(type);
 			},
 			next: function () {
 				return _session.next();
