@@ -9300,4 +9300,40 @@ a.button {
       width: 2em;
       display: block;
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      border-radius: 50%; }
+
+.content-choose {
+  flex-direction: column;
+  display: flex;
+  padding: 1em; }
+  .content-choose .cards {
+    flex: 3; }
+    .content-choose .cards .swipe-card {
+      border-radius: 5px;
+      margin: 2em;
+      padding: 1em;
+      border: 1px solid red;
+      flex-direction: column;
+      display: flex; }
+      .content-choose .cards .swipe-card .title-container {
+        text-align: center; }
+      .content-choose .cards .swipe-card .image-container {
+        flex: 1; }
+  .content-choose .buttons {
+    flex: 1;
+    margin: 1em;
+    flex-direction: row;
+    display: flex; }
+    .content-choose .buttons .button-container {
+      flex: 1;
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto; }
+      .content-choose .buttons .button-container button {
+        font-size: 2em;
+        height: 2em;
+        width: 2em;
+        display: block;
+        margin: auto;
+        border-radius: 50%; }

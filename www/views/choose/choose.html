@@ -8,12 +8,12 @@
 							on-destroy="cardDestroyed($index)"
 							on-card-swipe="cardSwiped($index)">
 
-					<div class="title">
-						{{card.name}}
+					<div class="title-container">
+						<h3>{{card.name}}</h3>
+						<p class="offer">{{card.offer}}</p>
+						<p class="distance"><i class="icon ion-android-walk"></i> 200m</p>
 					</div>
-					<div class="offer">
-						{{card.offer && card.offer.type}}
-					</div>
+
 					<div class="image-container" ng-style="{'background-image':'url('+card.image_url+')'}">
 					</div>
 
@@ -22,20 +22,25 @@
 			</swipe-cards>
 		</div>
 		<div class="buttons">
-			<div class="button-container">
 
-			<button ng-click="like()">
+			<div class="button-container">
+			<button ng-click="cardSwiped()">
 				<i class="icon ion-thumbsdown"></i>
 			</button>
 
+				</div>
+
+			<div class="button-container">
 			<button ng-click="pick()">
 				<i class="icon ion-heart"></i>
 			</button>
+			</div>
 
-			<button ng-click="junk()">
+				<div class="button-container">
+			<button ng-click="cardDestroyed()">
 				<i class="icon ion-thumbsup"></i>
 			</button>
-			</div>
+				</div>
 
 		</div>
 	</ion-content>

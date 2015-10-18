@@ -1,7 +1,50 @@
 .content-choose {
+  flex-direction: column;
+  display: flex;
+  padding: 1em;
   .cards {
-    .image-container {
-      height: 300px;
+    flex: 3;
+
+    .swipe-card {
+      border-radius: 5px;
+      margin: 2em;
+      padding: 1em;
+      border: 1px solid red;
+
+      flex-direction: column;
+      display: flex;
+
+      .title-container {
+        text-align: center;
+      }
+
+      .image-container {
+        flex: 1;
+      }
     }
+  }
+  .buttons {
+    flex: 1;
+    margin: 1em;
+
+    flex-direction: row;
+    display: flex;
+
+    .button-container {
+      flex: 1;
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+      button {
+        font-size: 2em;
+        height: 2em;
+        width: 2em;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+      }
+
+    }
+
   }
 }
