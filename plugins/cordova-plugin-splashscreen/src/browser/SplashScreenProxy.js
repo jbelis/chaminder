@@ -101,7 +101,7 @@ function readPreferencesFromCfg(cfg) {
         splashImageWidth = cfg.getPreferenceValue('SplashScreenWidth') || splashImageWidth;
         splashImageHeight = cfg.getPreferenceValue('SplashScreenHeight') || splashImageHeight;
     } catch(e) {
-        var msg = '[Browser][SplashScreen] Error occured on loading preferences from config.xml: ' + JSON.stringify(e);
+        var msg = '[Browser][SplashScreen] Error occurred on loading preferences from config.xml: ' + JSON.stringify(e);
         console.error(msg);
         error(msg);
     }
